@@ -3,15 +3,25 @@ package org.example;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="alien_table")
+
 public class Alien {
 
     @Id
     private int aid;
-    @Column(name="alien_name")
+
     private String aname;
-    @Transient
+
     private String tech;
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
+    private Laptop laptop;
 
     public int getAid() {
         return aid;
@@ -43,6 +53,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
                 '}';
     }
 }

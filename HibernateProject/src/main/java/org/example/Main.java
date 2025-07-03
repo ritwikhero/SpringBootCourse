@@ -34,10 +34,16 @@ public class Main {
 ////        sf.close();
 //        System.out.println(s1);
 
+        Laptop l1 = new Laptop();
+        l1.setBrand("asus");
+        l1.setModel("ROG");
+        l1.setRam(32);
+
         Alien  a1 = new Alien();
         a1.setAid(101);
         a1.setAname("Ritwik");
         a1.setTech("Java");
+        a1.setLaptop(l1);
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(org.example.Alien.class)
