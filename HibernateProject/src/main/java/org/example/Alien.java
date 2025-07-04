@@ -13,6 +13,9 @@ public class Alien {
 
     private String tech;
 
+    @OneToOne
+    private Laptop laptop;
+
     public Laptop getLaptop() {
         return laptop;
     }
@@ -21,7 +24,6 @@ public class Alien {
         this.laptop = laptop;
     }
 
-    private Laptop laptop;
 
     public int getAid() {
         return aid;

@@ -35,6 +35,7 @@ public class Main {
 //        System.out.println(s1);
 
         Laptop l1 = new Laptop();
+        l1.setLid(1);
         l1.setBrand("asus");
         l1.setModel("ROG");
         l1.setRam(32);
@@ -47,14 +48,19 @@ public class Main {
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(org.example.Alien.class)
+                .addAnnotatedClass(org.example.Laptop.class)
                 .configure()
                 .buildSessionFactory();
 
         Session session = sf.openSession();
         Transaction transaction = session.beginTransaction();
 
+        session.persist(l1);
         session.persist(a1);
         transaction.commit();
+
+        Alien a2 = session.find(Alien.class,101);
+        System.out.println(a2);
 
         session.close();
         sf.close();
