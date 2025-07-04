@@ -5,6 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -36,15 +40,24 @@ public class Main {
 
         Laptop l1 = new Laptop();
         l1.setLid(1);
-        l1.setBrand("asus");
+        l1.setBrand("Asus");
         l1.setModel("ROG");
         l1.setRam(32);
+
+        Laptop l2 = new Laptop();
+        l2.setLid(2);
+        l2.setBrand("Dell");
+        l2.setModel("xps");
+        l2.setRam(32);
 
         Alien  a1 = new Alien();
         a1.setAid(101);
         a1.setAname("Ritwik");
         a1.setTech("Java");
-        a1.setLaptop(l1);
+        a1.setLaptop(List.of(l1,l2));
+
+        l1.setAlien(a1);
+        l2.setAlien(a1);
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(org.example.Alien.class)
@@ -56,6 +69,7 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
         session.persist(l1);
+        session.persist(l2);
         session.persist(a1);
         transaction.commit();
 

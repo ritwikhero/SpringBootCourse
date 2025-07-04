@@ -2,6 +2,8 @@ package org.example;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 
 public class Alien {
@@ -13,16 +15,9 @@ public class Alien {
 
     private String tech;
 
-    @OneToOne
-    private Laptop laptop;
+    @OneToMany(mappedBy = "alien")
+    private List<Laptop> laptops;
 
-    public Laptop getLaptop() {
-        return laptop;
-    }
-
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
-    }
 
 
     public int getAid() {
@@ -45,6 +40,14 @@ public class Alien {
         return tech;
     }
 
+    public List<Laptop> getLaptop() {
+        return laptops;
+    }
+
+    public void setLaptop(List<Laptop> laptops) {
+        this.laptops = laptops;
+    }
+
     public void setTech(String tech) {
         this.tech = tech;
     }
@@ -55,7 +58,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
-                ", laptop=" + laptop +
+                ", laptop=" + laptops +
                 '}';
     }
 }
