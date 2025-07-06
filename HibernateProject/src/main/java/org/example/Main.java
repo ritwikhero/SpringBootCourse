@@ -50,15 +50,36 @@ public class Main {
         l2.setModel("xps");
         l2.setRam(32);
 
+        Laptop l3 = new Laptop();
+        l3.setLid(3);
+        l3.setBrand("Apple");
+        l3.setModel("M4 pro");
+        l3.setRam(128);
+
         Alien  a1 = new Alien();
         a1.setAid(101);
         a1.setAname("Ritwik");
         a1.setTech("Java");
-        a1.setLaptop(List.of(l1,l2));
 
-        l1.setAlien(a1);
-        l2.setAlien(a1);
 
+            Alien  a2 = new Alien();
+            a2.setAid(102);
+            a2.setAname("Gary");
+            a2.setTech("JS");
+
+
+            Alien  a3 = new Alien();
+            a3.setAid(103);
+            a3.setAname("Barry");
+            a3.setTech("Go");
+
+            a1.setLaptop(List.of(l1,l2));
+            a2.setLaptop(List.of(l1,l2,l3));
+            a3.setLaptop(List.of(l1));
+
+            l1.setAlien(List.of(a1,a2,a3));
+        l2.setAlien(List.of(a1,a2));
+        l3.setAlien(List.of(a2));
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(org.example.Alien.class)
                 .addAnnotatedClass(org.example.Laptop.class)
@@ -70,10 +91,15 @@ public class Main {
 
         session.persist(l1);
         session.persist(l2);
+        session.persist(l3);
+
         session.persist(a1);
+        session.persist(a2);
+        session.persist(a3);
+
         transaction.commit();
 
-        Alien a2 = session.find(Alien.class,101);
+        Alien a5 = session.find(Alien.class,102);
         System.out.println(a2);
 
         session.close();

@@ -2,6 +2,8 @@ package org.example;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Laptop {
     @Id
@@ -10,16 +12,16 @@ public class Laptop {
     private String model;
     private int ram;
 
-    public Alien getAlien() {
+    public List<Alien> getAlien() {
         return alien;
     }
 
-    public void setAlien(Alien alien) {
+    public void setAlien(List<Alien> alien) {
         this.alien = alien;
     }
 
-    @ManyToOne
-    private Alien alien;
+    @ManyToMany(mappedBy = "laptops")
+    private List<Alien> alien;
 
     public String getBrand() {
         return brand;
