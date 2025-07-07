@@ -4,7 +4,11 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="alien1" class="org.example.Alien" scope="prototype"></bean>
+<!--    <bean id="alien1" class="org.example.Alien" scope="prototype"></bean>-->
+    <bean id="alien1" class="org.example.Alien">
+        <property name="age" value="21"></property>
+    </bean>
+
 <!--    <bean id="alien2" class="org.example.Alien"></bean>-->
     <bean id="laptop" class="org.example.Laptop"></bean>
 
