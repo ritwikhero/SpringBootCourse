@@ -15,8 +15,8 @@ public class Alien {
 
     private String tech;
 
-    @ManyToMany
-    private List<Laptop> laptops;
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    private List<Laptop> laptops;
 
 
 
@@ -40,13 +40,13 @@ public class Alien {
         return tech;
     }
 
-    public List<Laptop> getLaptop() {
-        return laptops;
-    }
+//    public List<Laptop> getLaptop() {
+//        return laptops;
+//    }
 
-    public void setLaptop(List<Laptop> laptops) {
-        this.laptops = laptops;
-    }
+//    public void setLaptop(List<Laptop> laptops) {
+//        this.laptops = laptops;
+//    }
 
     public void setTech(String tech) {
         this.tech = tech;
@@ -58,7 +58,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
-                ", laptop=" + laptops +
+//                ", laptop=" + laptops +
                 '}';
     }
 }

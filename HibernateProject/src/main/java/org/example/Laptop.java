@@ -12,16 +12,16 @@ public class Laptop {
     private String model;
     private int ram;
 
-    public List<Alien> getAlien() {
-        return alien;
-    }
+//    public List<Alien> getAlien() {
+//        return alien;
+//    }
+//
+//    public void setAlien(List<Alien> alien) {
+//        this.alien = alien;
+//    }
 
-    public void setAlien(List<Alien> alien) {
-        this.alien = alien;
-    }
-
-    @ManyToMany(mappedBy = "laptops")
-    private List<Alien> alien;
+//    @ManyToMany(mappedBy = "laptops")
+//    private List<Alien> alien;
 
     public String getBrand() {
         return brand;
