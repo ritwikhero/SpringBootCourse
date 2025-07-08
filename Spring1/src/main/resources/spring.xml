@@ -6,8 +6,19 @@
     <!-- bean definitions here -->
 <!--    <bean id="alien1" class="org.example.Alien" scope="prototype"></bean>-->
     <bean id="alien1" class="org.example.Alien">
-        <property name="age" value="21"></property>
-        <property name="lap" ref="lap"></property>
+<!--        <property name="age" value="21"></property>-->
+<!--        <property name="lap" ref="lap"></property>-->
+<!--        <constructor-arg value="21" ></constructor-arg>-->
+<!--        <constructor-arg ref="lap" />-->
+
+<!--        <constructor-arg type="org.example.Laptop" ref="lap"/>-->
+<!--        <constructor-arg index="0" value="21"/>-->
+<!--        <constructor-arg index="1" value="21000"/>-->
+
+        <constructor-arg name="lap" ref="lap"/>
+        <constructor-arg name="age" value="21"/>
+        <constructor-arg name="salary" value="21000"/>
+
     </bean>
 
 <!--    <bean id="alien2" class="org.example.Alien"></bean>-->
