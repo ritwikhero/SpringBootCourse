@@ -7,9 +7,10 @@
 <!--    <bean id="alien1" class="org.example.Alien" scope="prototype"></bean>-->
     <bean id="alien1" class="org.example.Alien">
         <property name="age" value="21"></property>
+        <property name="lap" ref="lap"></property>
     </bean>
 
 <!--    <bean id="alien2" class="org.example.Alien"></bean>-->
-    <bean id="laptop" class="org.example.Laptop"></bean>
+    <bean id="lap" class="org.example.Laptop"></bean>
 
 </beans>
