@@ -7,11 +7,19 @@ public class Alien {
     private int age ;
     private int salary;
 
-    @ConstructorProperties({"age", "salary", "lap" })
-    public Alien(int age, int salary, Laptop lap) {
-        this.age = age;
-        this.salary = salary;
-        this.lap = lap;
+//    @ConstructorProperties({"age", "salary", "lap" })
+//    public Alien(int age, int salary, Laptop lap) {
+//        this.age = age;
+//        this.salary = salary;
+//        this.lap = lap;
+//    }
+
+    public Computer getComp() {
+        return comp;
+    }
+
+    public void setComp(Computer comp) {
+        this.comp = comp;
     }
 
     public int getSalary() {
@@ -26,15 +34,16 @@ public class Alien {
 //        this.lap = lap;
 //    }
 
-    private Laptop lap;
+//    private Laptop lap;
 
-    public Laptop getLap() {
-        return lap;
-    }
-
-    public void setLap(Laptop lap) {
-        this.lap = lap;
-    }
+    private Computer comp;
+//    public Laptop getLap() {
+//        return lap;
+//    }
+//
+//    public void setLap(Laptop lap) {
+//        this.lap = lap;
+//    }
 
     public int getAge() {
         return age;
@@ -50,6 +59,6 @@ public class Alien {
 
     public void code(){
         System.out.println("Coding....");
-        lap.complie();
+        comp.complie();
     }
 }

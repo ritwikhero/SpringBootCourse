@@ -16,7 +16,8 @@ public class App
 //        a1.setAge(21);
 //        a1.code();
         System.out.println(a1.getAge());
-        System.out.println(a1.getSalary());
+        a1.code();
+//        System.out.println(a1.getSalary());
 
 
 //        Alien a2 = (Alien) context.getBean("alien1");

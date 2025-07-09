@@ -5,9 +5,9 @@
 
     <!-- bean definitions here -->
 <!--    <bean id="alien1" class="org.example.Alien" scope="prototype"></bean>-->
-    <bean id="alien1" class="org.example.Alien">
-<!--        <property name="age" value="21"></property>-->
-<!--        <property name="lap" ref="lap"></property>-->
+    <bean id="alien1" class="org.example.Alien" autowire="byName">
+        <property name="age" value="21"></property>
+        <property name="comp" ref="comp2"></property>
 <!--        <constructor-arg value="21" ></constructor-arg>-->
 <!--        <constructor-arg ref="lap" />-->
 
@@ -15,13 +15,14 @@
 <!--        <constructor-arg index="0" value="21"/>-->
 <!--        <constructor-arg index="1" value="21000"/>-->
 
-        <constructor-arg name="lap" ref="lap"/>
-        <constructor-arg name="age" value="21"/>
-        <constructor-arg name="salary" value="21000"/>
+<!--        <constructor-arg name="lap" ref="lap"/>-->
+<!--        <constructor-arg name="age" value="21"/>-->
+<!--        <constructor-arg name="salary" value="21000"/>-->
 
     </bean>
 
 <!--    <bean id="alien2" class="org.example.Alien"></bean>-->
-    <bean id="lap" class="org.example.Laptop"></bean>
+    <bean id="comp1" class="org.example.Laptop" primary="true"></bean>
+    <bean id="comp2" class="org.example.Desktop"></bean>
 
 </beans>
