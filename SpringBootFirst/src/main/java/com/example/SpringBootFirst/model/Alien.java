@@ -1,4 +1,4 @@
-package com.example.SpringBootFirst;
+package com.example.SpringBootFirst.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

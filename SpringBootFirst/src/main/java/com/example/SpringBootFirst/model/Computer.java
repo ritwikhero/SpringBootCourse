@@ -1,4 +1,4 @@
-package com.example.SpringBootFirst;
+package com.example.SpringBootFirst.model;
 
 public interface Computer {
     void compile();
