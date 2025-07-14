@@ -1,11 +1,11 @@
 package com.example.SpringBootFirst;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("Laptop")
-public class Laptop implements Computer {
+@Primary
+public class Desktop implements Computer {
 
     public void compile(){
         System.out.println("Compiling in Laptop....");
