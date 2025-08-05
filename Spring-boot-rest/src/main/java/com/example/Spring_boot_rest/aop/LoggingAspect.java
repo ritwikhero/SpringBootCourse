@@ -28,7 +28,7 @@ public class LoggingAspect {
     public void logMethodSuccess(JoinPoint jp) {
         LOGGER.info("Method success " + jp.getSignature().getName());
     }
-
+// after error comes
     @AfterThrowing("execution (* com.example.Spring_boot_rest.service.JobService.getAllJobs(..)) || execution (* com.example.Spring_boot_rest.service.JobService.getJob(..))")
     public void logMethodFail(JoinPoint jp) {
         LOGGER.info("Method Exception " + jp.getSignature().getName());
