@@ -1,17 +1,18 @@
 package com.example.Spring_sec_demo;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
     @GetMapping("hello")
-    public String greet(){
-        return "Hello world";
+    public String greet(HttpServletRequest request){
+        return "Hello world" + request.getSession().getId();
     }
 
     @GetMapping("about")
-    public String about(){
-        return "ritwik";
+    public String about(HttpServletRequest request){
+        return "ritwik" + request.getSession().getId();
     }
 }
