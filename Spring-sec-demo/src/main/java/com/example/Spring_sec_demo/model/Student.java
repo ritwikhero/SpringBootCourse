@@ -1,4 +1,4 @@
-package com.example.Spring_sec_demo;
+package com.example.Spring_sec_demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
