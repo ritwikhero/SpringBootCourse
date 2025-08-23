@@ -1,10 +1,9 @@
 package com.example.Spring_sec_demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -14,7 +13,9 @@ import lombok.NoArgsConstructor;
 @Table(name="users")
 public class User {
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
     private String username;
     private String password;
 }
