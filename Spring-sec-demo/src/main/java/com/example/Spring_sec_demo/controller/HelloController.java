@@ -15,4 +15,9 @@ public class HelloController {
     public String about(HttpServletRequest request){
         return "ritwik" + request.getSession().getId();
     }
+
+    @GetMapping("new")
+    public String newHome(HttpServletRequest request){
+        return "home " + request.getSession().getId();
+    }
 }

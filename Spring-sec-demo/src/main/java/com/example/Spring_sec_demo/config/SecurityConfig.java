@@ -80,24 +80,24 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration cofig) throws Exception {
         return cofig.getAuthenticationManager();
     }
-    @Bean
-    public UserDetailsService userDetailsService(){
-
-        UserDetails user = User
-                .withDefaultPasswordEncoder()
-                .username("ritwik")
-                .password("r@123")
-                .roles("USER")
-                .build();
-
-        UserDetails admin = User
-                .withDefaultPasswordEncoder()
-                .username("admin")
-                .password("a@123")
-                .roles("ADMIN")
-                .build();
-
-
-        return new InMemoryUserDetailsManager(user,admin);
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//
+//        UserDetails user = User
+//                .withDefaultPasswordEncoder()
+//                .username("ritwik")
+//                .password("r@123")
+//                .roles("USER")
+//                .build();
+//
+//        UserDetails admin = User
+//                .withDefaultPasswordEncoder()
+//                .username("admin")
+//                .password("a@123")
+//                .roles("ADMIN")
+//                .build();
+//
+//
+//        return new InMemoryUserDetailsManager(user,admin);
+//    }
 }
