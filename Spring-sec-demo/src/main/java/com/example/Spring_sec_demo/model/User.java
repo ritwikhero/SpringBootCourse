@@ -3,7 +3,6 @@ package com.example.Spring_sec_demo.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -13,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String username;
     private String password;
